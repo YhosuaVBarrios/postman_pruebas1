@@ -1,0 +1,19 @@
+{"cats": {
+    "path": "/fact",
+    "headers": {
+      "User-Agent": "PactumJS"
+    }
+  },
+  "catsList": {
+    "path": "/facts",
+    "headers": {
+      "User-Agent": "PactumJS"
+    }
+  },
+  "catsBreeds": {
+    "path": "/breeds",
+    "headers": {
+      "User-Agent": "PactumJS"
+    }
+  }
+}
