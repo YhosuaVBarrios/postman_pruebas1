@@ -31,7 +31,7 @@ describe("Postman Version Tests Cats", () => {
     //console.log(factInfo);
     charactersValidation.chekCharacterListInJson(factInfo.body);
   });
-  it("DEMO2025-3 - Get and check list of cats and parameters ,fact exits and is a string", async () => {
+  it("DEMO2025-3 - Get and check list of cats is origin mutation", async () => {
     const factInfo = await requests.getCatsBreeds();
     //console.log(factInfo);
     charactersValidation.chekBreeds(factInfo.body);
