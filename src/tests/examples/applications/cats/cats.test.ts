@@ -3,9 +3,9 @@ import LoadEnvironment from "@utils/loadEnvironment"; //Utilizamos para buscar l
 import CatsValidation from "@validations/examples/applications/cats/catsValidation";
 
 // Fixtures:archivo de datos
-const data = LoadEnvironment.getFixture(
-  "examples/applications/dragon-ball/data/characters.json"
-);
+//const data = LoadEnvironment.getFixture(   //para buscar desde fichero y comprobar unido a src/validations/examples/applications/cats/catsValidation.ts:(17:39)
+  //"examples/applications/cats/data/cats.json"
+//);
 
 // Instances
 const requests = Requests.getInstance();
@@ -20,7 +20,7 @@ const catsValidation = CatsValidation.getInstance();
 //Postman version cats
 
 describe("Postman Version Tests Cats", () => {
-  it("DEMO2025-1 - Get and check if lenght exits and is a number.", async () => {
+  it.only("DEMO2025-1 - Get and check if lenght exits and is a number.", async () => {
     const factInfo = await requests.getCats();
     //console.log(factInfo);
     catsValidation.chekKeyInJson(factInfo.body);
