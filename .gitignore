@@ -1,0 +1,40 @@
+# Node dependencies
+node_modules
+package-lock.json
+
+# Editor configuration files
+.idea
+
+# Build and distribution files
+dist
+build/Release
+
+# Logs and temporary files
+logs
+*.log
+pids
+*.pid
+*.seed
+
+# Test coverage and build files
+lib-cov
+coverage
+.grunt
+
+# Operating system specific files
+.DS_Store
+
+# Environment configuration files
+.env
+/src/environments/*.json
+!/src/environments/schema-environment.json
+!/src/environments/APPLICATIONS-EXAMPLE.json
+!/src/environments/AV-EXAMPLE.json
+
+# System generated outputs
+output.json
+/tests.json
+.api
+
+# Waf build system
+.lock-wscript

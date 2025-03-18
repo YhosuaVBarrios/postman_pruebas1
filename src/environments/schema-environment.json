@@ -1,0 +1,10 @@
+{
+  "baseUrl": "",
+  "qaseProject": "",
+  "qaseToken": "",
+  "urlDispatcher": "",
+  "urlFulfillment": "",
+  "headers": {
+    "paramName": "paramValue"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "welcome": {
+    "basicKPIs": "interaccionSimple",
+    "category": "NA",
+    "subcategory": "NA"
+  },
+  "makeOrder": {
+    "menuSelection": {
+      "basicKPIs": "interaccionSimple",
+      "category": "makeOrder",
+      "subcategory": "menuSelection"
+    },
+    "pizza": {
+      "basicKPIs": "interaccionSimple",
+      "category": "makeOrder",
+      "subcategory": "pizza"
+    },
+    "burger": {
+      "basicKPIs": "interaccionSimple",
+      "category": "makeOrder",
+      "subcategory": "burger"
+    },
+    "somethingElse": {
+      "basicKPIs": "interaccionSimple",
+      "category": "makeOrder",
+      "subcategory": "somethingElse"
+    },
+    "final": {
+      "basicKPIs": "interaccionSimple",
+      "category": "makeOrder",
+      "subcategory": "finalized"
+    }
+  }
+}

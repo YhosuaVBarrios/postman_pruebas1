@@ -1,0 +1,65 @@
+{
+  "options": {
+    "pizza": {
+      "payload": "button-menu.pizza",
+      "response": "Pizza",
+      "title": "Pizza"
+    },
+    "burger": {
+      "response": "Hamburguesa",
+      "title": "Hamburguesa",
+      "payload": "button-menu.burger"
+    }
+  },
+  "pizza": {
+    "neapolitan": {
+      "response": "Napolitana",
+      "payload": "button-menu.pizza.napolitana",
+      "title": "Napolitana"
+    },
+    "barbecue": {
+      "payload": "button-menu.pizza.barbacoa",
+      "response": "Barbacoa",
+      "title": "Barbacoa"
+    },
+    "fourCheeses": {
+      "response": "4 quesos",
+      "title": "4 quesos",
+      "payload": "button-menu.pizza.4quesos"
+    }
+  },
+  "burger": {
+    "beef": {
+      "response": "Ternera",
+      "payload": "button-menu.burger.ternera",
+      "title": "Ternera"
+    },
+    "chicken": {
+      "response": "Pollo crujiente",
+      "title": "Pollo crujiente",
+      "payload": "button-menu.burger.pollo"
+    },
+    "veggie": {
+      "payload": "button-menu.burger.vegana",
+      "response": "Vegana",
+      "title": "Vegana"
+    }
+  },
+  "somethingElse": {
+    "yes": {
+      "payload": "button-generic.yes",
+      "title": "Sí",
+      "response": "Sí"
+    },
+    "no": {
+      "title": "No",
+      "payload": "button-generic.no",
+      "response": "No"
+    },
+    "checkOrder": {
+      "response": "Consultar pedido actual",
+      "payload": "button-order.check",
+      "title": "Consultar pedido actual"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+ignores: [
+    "@types/dialogflow",
+    "@types/jest",
+    "@types/node",
+    "dotenv",
+    "jest",
+    "nodemon",
+    "process",
+    "redis-mock",
+    "terser",
+    "ts-jest",
+    "ts-node",
+    "typescript",
+    "cypress-mochawesome-reporter",
+    "cypress-multi-reporters",
+    "tsc-alias",
+    "jest-runner-groups",
+    "tsconfig-paths",
+    "tslib"
+]
+skip-missing: true

@@ -1,0 +1,19 @@
+{
+  "burger": {
+    "generic": "button-menu.burger",
+    "chicken": "button-menu.burger.pollo",
+    "veal": "button-menu.burger.ternera",
+    "veggie": "button-menu.burger.vegana"
+  },
+  "pizza": {
+    "generic": "button-menu.pizza",
+    "neapolitan": "button-menu.pizza.napolitana",
+    "barbecue": "button-menu.pizza.barbacoa",
+    "fourCheese": "button-menu.pizza.4quesos"
+  },
+  "generic": {
+    "yes": "button-generic.yes",
+    "no": "button-generic.no",
+    "fallback": "bla bla bla"
+  }
+}

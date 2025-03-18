@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "lib": [
+      "dom"
+    ],
+    "paths": {
+      "@validations/*": ["src/validations/*"],
+      "@utils/*": ["src/utils/*"],
+      "@classes/*": ["src/classes/*"],
+      "@fixtures/*": ["src/fixtures/*"],
+      "@requests/*": ["src/requests/*"],
+      "@environments/*": ["src/environments/*"]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/__test__/*.*",
+    "**/*.spec.ts"
+  ]
+}

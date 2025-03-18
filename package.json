@@ -1,0 +1,66 @@
+{
+  "name": "pactumjs-skeleton",
+  "version": "1.0.2",
+  "description": "develop version dated on 2025/03/05",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "archetype": "cp ../../../.depcheckrc ./ && tar -cvzf v${npm_package_version}.tgz --exclude='node_modules' --exclude='package-lock.json' --exclude='dist' --exclude='*skeleton.tgz' * .[^.]*",
+    "audit": "(npm run key-add || true) && (npm i --ignore-scripts || npm run clean && npm i --ignore-scripts) && if [ \"$_SKIP_AUDIT\" != \"true\" ]; then npm audit --audit-level=high && exit $?; fi",
+    "build": "(npm run key-add || true) && npm run depcheck && npm i && npm run audit && npm run key-remove && npm run eslint",
+    "build-audit": "npm run clean && npm run depcheck && npm run audit && tsc && npm pack && mv ${npm_package_name}-${npm_package_version}.tgz ${npm_package_name}.tgz && npm run key-remove",
+    "clean": "rm -rf node_modules dist package-lock.json *.tgz || true",
+    "clean-build": "npm run clean && npm run build",
+    "depcheck": "if [ -f \"../../../.depcheckrc\" ]; then DEPCHECK_CONFIG=../../../.depcheckrc; else DEPCHECK_CONFIG=./.depcheckrc; fi && command -v depcheck || npm install -g depcheck && depcheck --config=\"$DEPCHECK_CONFIG\"",
+    "compile-eslint": "cd `npm run eslint-location | tail -1` && npm run build-eslint",
+    "enable-eslint": "cd `npm run eslint-location | tail -1`/eslintRules/ && cp -R package.json .eslintrc.js .eslintignore ../",
+    "eslint": "npm run git-hook && npm run enable-eslint && npm run compile-eslint",
+    "eslint-location": "([ -d \"../eslintRules/\" ] && echo '../') || ([ -d \"../../eslintRules/\" ] && echo '../../') || ([ -d \"../../../eslintRules/\" ] && echo '../../../') || (echo EslintRules not found && exit 1)",
+    "lint": "cd `npm run eslint-location | tail -1`eslintRules && npm run lint",
+    "lint-cloud-build": "cd ../../ && npm run lint-cloud-build --libtolint=$npm_config_path/cypress/**/*",
+    "lint-local": "levels=`npm run eslint-location | tail -1 | grep -o / | wc -l | xargs` && path=`pwd | rev | cut -d'/' -f 1-$levels | rev` && cd `npm run eslint-location | tail -1` && npm run lint-local --libtolint=$path/cypress/**/*",
+    "key-add": "local_key=`(grep -shE 'key=(.*)' ./emergya.properties ../emergya.properties ../../emergya.properties ../../../emergya.properties | head -1 2> /dev/null || echo\"\") | sed -E 's#key=(.*)#\\1#'` && [ ! -z \"$local_key\" ] && (sed -i.bk -E \"s#https:\\/\\/virtual-assisant-product\\.ew\\.r\\.appspot\\.com\\/(.*)\\/(.+)\\.tgz(.)(\\,){0,1}\\$#https:\\/\\/virtual-assisant-product\\.ew\\.r\\.appspot\\.com\\/\\1\\/\\2.tgz?key=\"$local_key\"\\3\\4#g\" package.json) && rm package.json.bk || echo \"No key found\"",
+    "key-remove": "(sed -i.bk -E \"s#https:\\/\\/virtual-assisant-product\\.ew\\.r\\.appspot\\.com\\/(.*)\\/(.+)\\.tgz\\?key=([0-9a-zA-Z\\-]+)(.)(\\,){0,1}#https:\\/\\/virtual-assisant-product\\.ew\\.r\\.appspot\\.com\\/\\1\\/\\2.tgz\\4\\5#g\" package.json) && rm package.json.bk",
+    "pre-deploy": "./node_modules/typescript/bin/tsc",
+    "preinstall": "echo \"\\x1b[32m[Emergya Preinstall Clear Cache NPM]\" && npm cache clean --force",
+    "git-hook": "cd `npm run eslint-location | tail -1`eslintRules && npm run git-hook",
+    "test": "jest --verbose --runInBand src/tests",
+    "test-with-output": "jest --verbose --runInBand --json --outputFile=output.json src/tests",
+    "upload-results": "ts-node -r tsconfig-paths/register src/utils/uploadQase.ts",
+    "remove-examples": "npm run remove-examples-folders && npm run remove-examples-environments",
+    "remove-examples-folders": "find src -type d -name \"examples\" -exec rm -rf {} +",
+    "remove-examples-environments": "find src/environments -type f -name \"*EXAMPLE.json\" -exec rm -f {} +"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emergya/ed-common-libraries.git"
+  },
+  "keywords": [
+    "pactumjs"
+  ],
+  "author": "Emergya QA <QA@emergya.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emergya/ed-common-libraries/issues"
+  },
+  "homepage": "https://github.com/Emergya/ed-common-libraries#readme",
+  "devDependencies": {
+    "@types/jest": "29.5.12",
+    "@types/node": "20.12.2",
+    "jest": "29.7.0",
+    "jest-runner-groups": "2.2.0",
+    "tsconfig-paths": "4.2.0",
+    "tslib": "2.6.2"
+  },
+  "dependencies": {
+    "@api/qase": "file:.api/apis/qase",
+    "chai": "4.4.1",
+    "minimist": "1.2.8",
+    "pactum": "3.7.6",
+    "pactum-matchers": "1.1.7",
+    "ts-jest": "29.1.2",
+    "ts-node": "10.9.2",
+    "typescript": "4.9.5"
+  }
+}

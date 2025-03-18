@@ -1,0 +1,20 @@
+{
+  "response": {
+    "welcome": [
+      "¿Qué desea tomar?\nElige una de estas opciones:",
+      "Esta puede ser otra frase de bienvenida"
+    ],
+    "pizzaOrder": [
+      "¿Que tipo de pizza?"
+    ],
+    "burgerOrder": [
+      "Que tipo de hamburguesa?"
+    ],
+    "somethingElse": [
+      "Desea añadir algo más?"
+    ],
+    "final": [
+      "Su pedido final es: .\nMuchas gracias por pedir en QA Foods"
+    ]
+  }
+}

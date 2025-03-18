@@ -1,0 +1,9 @@
+{
+    "urlDispatcher": "https://qa-dispatcher-cx-488489431943.europe-west1.run.app",
+    "urlFulfillment": "https://qa-fulfillment-cx-488489431943.europe-west1.run.app",
+    "headers": {
+        "Accept": "*/*"
+    },
+    "qaseProject": "NO_SUBIR_A_GITHUB",
+    "qaseToken": "NO_SUBIR_A_GITHUB"
+}

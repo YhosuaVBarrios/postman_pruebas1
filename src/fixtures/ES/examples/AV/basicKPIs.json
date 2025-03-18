@@ -1,0 +1,66 @@
+{
+  "interaccionSimple": {
+    "startConversation": false,
+    "endConversation": false,
+    "channel": "default",
+    "classification": "Managed",
+    "operator": false
+  },
+  "inicioDeConversacion": {
+    "startConversation": true,
+    "endConversation": false,
+    "channel": "default",
+    "classification": "Managed",
+    "operator": false
+  },
+  "finalDeConversacion": {
+    "startConversation": false,
+    "endConversation": true,
+    "channel": "default",
+    "classification": "Managed",
+    "operator": false
+  },
+  "interaccionUnica": {
+    "startConversation": true,
+    "endConversation": true,
+    "channel": "default",
+    "classification": "Managed",
+    "operator": false
+  },
+  "fallback": {
+    "startConversation": false,
+    "endConversation": false,
+    "channel": "default",
+    "classification": "Unmanaged",
+    "operator": false
+  },
+  "silencios": {
+    "startConversation": false,
+    "endConversation": false,
+    "channel": "default",
+    "classification": "Managed",
+    "operator": false,
+    "assistantInteraction": true
+  },
+  "serviceError": {
+    "startConversation": false,
+    "endConversation": false,
+    "channel": "default",
+    "classification": "Service Error",
+    "operator": false
+  },
+  "integrationError": {
+    "startConversation": false,
+    "endConversation": false,
+    "channel": "default",
+    "classification": "Integration Error",
+    "operator": false
+  },
+  "unsupported": {
+    "startConversation": false,
+    "endConversation": false,
+    "channel": "default",
+    "classification": "Unsupported",
+    "operator": false
+  }
+}

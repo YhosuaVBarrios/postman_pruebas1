@@ -1,0 +1,5 @@
+{
+    "dispatcher": {
+        "path": "/v1/dispatcher"
+    }
+}
