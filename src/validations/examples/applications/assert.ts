@@ -30,7 +30,7 @@ export default class Assert {
     assert.isNotEmpty(value, message);
   }
 
-  /**
+ /**
    * @function toHaveProperty
    *
    */

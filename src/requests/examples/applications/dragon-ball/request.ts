@@ -32,41 +32,6 @@ class Request {
       .retry(this.RETRIES, this.TIMEOUT - 1);  //delay
   }
 
-   /** charactersRequests
-   * @description Get the dragon-ball characters list
-   */
-   async getCats(): Promise<ObjectType> {           //Retornamos un object
-    request.setDefaultTimeout(this.TIMEOUT);            //serdefaultTimeout es propio de pactum y pasamos variable con 20000
-    return spec()                                         //Crea una nueva prueba en pactum
-      .get(`${LoadEnvironment.getInfo('urlBase')}${this.RESOURCE.get.cats.path}`)  //Peticion get //cambiar.path /fact
-      .withHeaders(this.RESOURCE.get.cats.headers)
-      .expectStatus(200)
-      .retry(this.RETRIES, this.TIMEOUT - 1);  //delay
-  }
-
-  /** charactersRequests
-   * @description Get the dragon-ball characters list
-   */
-  async getCatsList(): Promise<ObjectType> {           //Retornamos un object
-    request.setDefaultTimeout(this.TIMEOUT);            //serdefaultTimeout es propio de pactum y pasamos variable con 20000
-    return spec()                                         //Crea una nueva prueba en pactum
-      .get(`${LoadEnvironment.getInfo('urlBase')}${this.RESOURCE.get.catsList.path}`)  //Peticion get //cambiar.path /fact
-      .withHeaders(this.RESOURCE.get.catsList.headers)
-      .expectStatus(200)
-      .retry(this.RETRIES, this.TIMEOUT - 1);  //delay
-  }
-
-   /** charactersRequests
-   * @description Get the dragon-ball characters list
-   */
-   async getCatsBreeds(): Promise<ObjectType> {           //Retornamos un object
-    request.setDefaultTimeout(this.TIMEOUT);            //serdefaultTimeout es propio de pactum y pasamos variable con 20000
-    return spec()                                         //Crea una nueva prueba en pactum
-      .get(`${LoadEnvironment.getInfo('urlBase')}${this.RESOURCE.get.catsBreeds.path}`)  //Peticion get //cambiar.path /fact
-      .withHeaders(this.RESOURCE.get.catsBreeds.headers)
-      .expectStatus(200)
-      .retry(this.RETRIES, this.TIMEOUT - 1);  //delay
-  }
   /**
    * @description Get a dragon-ball character by ID
    */
