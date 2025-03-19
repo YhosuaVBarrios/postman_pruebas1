@@ -9,8 +9,8 @@ class CatsValidation {
   private FIXTURES_PATH = "examples/applications/cats";
 
   //private DATA = LoadEnvironment.getFixture(   // para buscar desde fichero
-  // `${this.FIXTURES_PATH}/data/cats.json`..
-  //);..
+  // `${this.FIXTURES_PATH}/data/cats.json`
+  //);
 
   static getInstance(): CatsValidation {
     if (!CatsValidation.CatsValidation) {
