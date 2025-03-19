@@ -12,6 +12,5 @@
     "charactersByName": {
       "path": "/api/characters?name=REPLACE_NAME"
     }
-   
   }
 }

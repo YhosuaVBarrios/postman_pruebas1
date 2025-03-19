@@ -1,4 +1,6 @@
-{"cats": {
+{
+  "get": {
+  "cats": {
     "path": "/fact",
     "headers": {
       "User-Agent": "PactumJS"
@@ -11,9 +13,10 @@
     }
   },
   "catsBreeds": {
-    "path": "/breeds", ///esto es un comentario
+    "path": "/breeds", 
     "headers": {
       "User-Agent": "PactumJS"
     }
   }
+}
 }

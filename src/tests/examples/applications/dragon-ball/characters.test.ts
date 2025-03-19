@@ -26,6 +26,7 @@ describe("Characters", () => {
     charactersValidation.checkCharactersDescriptionNotEmpty(characters);
   });
 
+
   it("DEMO2023-50 - Get a character by ID and check its name in an existing file.", async () => {
     const characterIds = data.items.map((character) => character.id);
     const randomID =
