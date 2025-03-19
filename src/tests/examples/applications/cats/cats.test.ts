@@ -7,7 +7,7 @@ import CatsValidation from "@validations/examples/applications/cats/catsValidati
 //"examples/applications/cats/data/cats.json"
 //);
 
-// Instances..
+// Instances
 const requests = Requests.getInstance();
 const catsValidation = CatsValidation.getInstance();
 
