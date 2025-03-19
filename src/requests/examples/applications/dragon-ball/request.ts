@@ -1,6 +1,6 @@
-import { request, spec } from 'pactum';  //Importa la configuracion de la peticion headers contraseña usuarios ...
-import { ObjectType } from '@classes/objectType'; //Configuracion para any ObjectType
-import LoadEnvironment from '@utils/loadEnvironment';  // Iporta  lacalseLoadEnviroment que carga las configuraciones del entorno
+import { request, spec } from "pactum"; //Importa la configuracion de la peticion headers contraseña usuarios ...
+import { ObjectType } from "@classes/objectType"; //Configuracion para any ObjectType
+import LoadEnvironment from "@utils/loadEnvironment"; // Iporta  lacalseLoadEnviroment que carga las configuraciones del entorno
 
 class Request {
   private static REQUEST: Request;
@@ -9,9 +9,11 @@ class Request {
 
   private RETRIES = 4;
 
-  private FIXTURES_PATH = 'examples/applications/dragon-ball';
+  private FIXTURES_PATH = "examples/applications/dragon-ball";
 
-  private RESOURCE = LoadEnvironment.getFixture(`${this.FIXTURES_PATH}/resource/characters.json`);
+  private RESOURCE = LoadEnvironment.getFixture(
+    `${this.FIXTURES_PATH}/resource/characters.json`
+  );
 
   static getInstance(): Request {
     if (!Request.REQUEST) {
@@ -23,13 +25,18 @@ class Request {
   /** charactersRequests
    * @description Get the dragon-ball characters list
    */
-  async getCharacters(): Promise<ObjectType> {           //Retornamos un object
-    request.setDefaultTimeout(this.TIMEOUT);            //serdefaultTimeout es propio de pactum y pasamos variable con 20000
-    return spec()                                         //Crea una nueva prueba en pactum
-      .get(`${LoadEnvironment.getInfo('urlBase')}${this.RESOURCE.get.characters.path}`)  //Peticion get //cambiar.path /fact
+  async getCharacters(): Promise<ObjectType> {
+    //Retornamos un object
+    request.setDefaultTimeout(this.TIMEOUT); //serdefaultTimeout es propio de pactum y pasamos variable con 20000
+    return spec() //Crea una nueva prueba en pactum
+      .get(
+        `${LoadEnvironment.getInfo("urlBase")}${
+          this.RESOURCE.get.characters.path
+        }`
+      ) //Peticion get //cambiar.path /fact
       .withHeaders(this.RESOURCE.get.characters.headers)
       .expectStatus(200)
-      .retry(this.RETRIES, this.TIMEOUT - 1);  //delay
+      .retry(this.RETRIES, this.TIMEOUT - 1); //delay
   }
 
   /**
@@ -39,10 +46,13 @@ class Request {
     request.setDefaultTimeout(this.TIMEOUT);
     return spec()
       .get(
-        `${LoadEnvironment.getInfo('urlBase')}`
-        + `${this.RESOURCE.get.charactersByID.path.replace('REPLACE_ID', id.toString())}`,
+        `${LoadEnvironment.getInfo("urlBase")}` +
+          `${this.RESOURCE.get.charactersByID.path.replace(
+            "REPLACE_ID",
+            id.toString()
+          )}`
       )
-      .withHeaders(LoadEnvironment.getInfo('headers'))
+      .withHeaders(LoadEnvironment.getInfo("headers"))
       .expectStatus(200)
       .retry(this.RETRIES, this.TIMEOUT - 1);
   }
@@ -54,10 +64,13 @@ class Request {
     request.setDefaultTimeout(this.TIMEOUT);
     return spec()
       .get(
-        `${LoadEnvironment.getInfo('urlBase')}`
-        + `${this.RESOURCE.get.charactersByName.path.replace('REPLACE_NAME', name)}`,
+        `${LoadEnvironment.getInfo("urlBase")}` +
+          `${this.RESOURCE.get.charactersByName.path.replace(
+            "REPLACE_NAME",
+            name
+          )}`
       )
-      .withHeaders(LoadEnvironment.getInfo('headers'))
+      .withHeaders(LoadEnvironment.getInfo("headers"))
       .expectStatus(200)
       .retry(this.RETRIES, this.TIMEOUT - 1);
   }

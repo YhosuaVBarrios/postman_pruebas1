@@ -17,7 +17,7 @@ const catsValidation = CatsValidation.getInstance();
  * @group Regression
  */
 
-//Postman version cats
+//Postman version cats y razas de cats
 
 describe("Postman Version Tests Cats", () => {
   it("DEMO2025-1 - Get and check if lenght exits and is a number.", async () => {
