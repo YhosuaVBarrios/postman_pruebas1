@@ -22,7 +22,8 @@ const harryValidation = HarryValidation.getInstance();
 describe("Diferentes libros de HarryPotter", () => {
   it.only("HARRY2025-01 - Know the books that exist and the key value keys are complete with their type", async () => {
     const harryInfo = await requests.getBooks();
-    harryValidation.chekKeyInJson(harryInfo.body);
+    harryValidation.chekIsJson(harryInfo.body);
+    harryValidation.chekIsArray(harryInfo.body);
     harryValidation.chekEmptyOrNull(harryInfo.body);
     harryValidation.checkTypeValue(harryInfo.body);
     harryValidation.checkWordInTitle(harryInfo.body);
