@@ -17,10 +17,7 @@ class LoadEnvironment {
     //Cargar configuracion de entorno  si no esta cargado leel el Json del entorno
     if (!LoadEnvironment.info) {
       // Verifica si LoadEnviroment.info ya esta cargado
-      const environmentPath = path.resolve(
-        __dirname,
-        `../environments/${this.getEnvironment()}.json`
-      ); //reemplaza el valor de la variable enviroment que pasas por consola
+      const environmentPath = path.resolve(__dirname,`../environments/${this.getEnvironment()}.json`); //reemplaza el valor de la variable enviroment que pasas por consola
       const rawData = fs.readFileSync(environmentPath, "utf-8"); // Lee el archivo json utilizando fs.readFileSync()
       LoadEnvironment.info = JSON.parse(rawData); //Pasa e json a un objeto Javascript utiliza el .parse
     }
@@ -50,10 +47,7 @@ class LoadEnvironment {
       );
       process.exit(1);
     }
-    const filePath = path.resolve(
-      __dirname,
-      `../fixtures/${language}/${localPath}`
-    ); //Construye la ruta usando el idioma
+    const filePath = path.resolve(__dirname,`../fixtures/${language}/${localPath}`); //Construye la ruta usando el idioma
     const rawData = fs.readFileSync(filePath, "utf-8");
 
     return JSON.parse(rawData);
