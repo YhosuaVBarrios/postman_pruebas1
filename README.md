@@ -46,7 +46,7 @@ $ npm run test -- --environment=ENVIRONMENT_NAME --group=FILTER --language=LANGU
 
 Examples: 
 $ npm run test -- --environment=APPLICATIONS-EXAMPLE --group=DragonBall --group=ES 
-$ npm run test -- --environment=AV-EXAMPLE --group=Restaurant --group=ES --group=-Pizza
+$ npm run test -- --environment=AV-EXAMPLE --group=Restaurant --language=ES --group=Pizza
 ```
 
 #### 3️⃣.2️⃣ Run tests and Export them.

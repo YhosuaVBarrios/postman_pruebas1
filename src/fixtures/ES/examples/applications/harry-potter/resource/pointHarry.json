@@ -1,0 +1,16 @@
+{
+  "get": {
+    "books": {
+      "path": "/books",
+      "headers": {
+        "User-Agent": "PactumJS"
+      }
+    },
+    "characters": {
+      "path": "/characters"
+    },
+    "houses": {
+      "path": "/houses"
+    }
+  }
+}
